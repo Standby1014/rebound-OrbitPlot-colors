@@ -25,7 +25,7 @@ class OrbitPlot:
             Tuple defining the figure size (default: (5,5))
 
         projection      : string, optional
-            By default the orbit is shown as a projection into the xy plane. To show the orbit projected into the xz plane, set this string to "xy".
+            By default the orbit is shown as a projection into the xy plane. To show the orbit projected into the xz plane, set this string to "xz".
         xlim            : tuple of float, optional           
             Limits for x axes (default: None = automatically determined)
         ylim            : tuple of float, optional           
@@ -103,8 +103,8 @@ class OrbitPlot:
                 unitlabel = ""
             self.fig = plt.figure(figsize=figsize)
             self.ax = plt.subplot(111,aspect="equal") #check syntax
-            self.ax.set_xlabel("x"+unitlabel)
-            self.ax.set_ylabel("y"+unitlabel)
+            self.ax.set_xlabel(projection[0]+unitlabel)
+            self.ax.set_ylabel(projection[1]+unitlabel)
 
         self.orbits = None
         self.primary = None
